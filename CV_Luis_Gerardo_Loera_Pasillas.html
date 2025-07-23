@@ -1,141 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CV - Luis Gerardo Loera Pasillas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     body {
       background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      font-family: 'Poppins', sans-serif;
+      padding-bottom: 80px;
+      /* Para espacio del botón flotante */
     }
-    header, section {
-      background-color: #ffffff;
+
+    header,
+    section {
+      background-color: #fff;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 12px rgba(13, 110, 253, 0.15);
       padding: 2rem;
       margin-bottom: 2rem;
+      transition: box-shadow 0.3s ease;
     }
-    h1, h2 {
+
+    header:hover,
+    section:hover {
+      box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+    }
+
+    h1,
+    h2 {
       font-weight: bold;
     }
+
+    h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
     h5 {
       font-weight: 600;
       color: #0d6efd;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     .contact-icons {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d6efd;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #084298;
+    }
+
+    .img-responsive {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Ajustes para PDF */
+    /*#cv {
+      width: 8.27in;
+      padding: 1in;
+      background: white;
+    }*/
+
+    #cv {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+    }
+
+    /* Evitar cortes en PDF */
+    #cv>section,
+    #cv>section>div {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .no-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* Botón flotante */
+    #download-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      border-radius: 50px;
+      padding: 0.7rem 1.2rem;
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+      background-color: white;
+      color: #0d6efd;
+      border: 2px solid #0d6efd;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #download-btn:hover {
+      background-color: #0d6efd;
+      color: white;
+      box-shadow: 0 6px 18px rgba(13, 110, 253, 0.5);
+    }
+
+    @media print {
+      body {
+        background: white !important;
+      }
+
+      header,
+      section {
+        box-shadow: none !important;
+        background-color: white !important;
+      }
+
+      .no-break {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-before: auto !important;
+        page-break-after: auto !important;
+      }
+
+      #cv {
+        page-break-inside: auto;
+      }
+
+      section {
+        page-break-inside: avoid !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container py-5">
-    <header data-aos="fade-down">
-      <h1 class="text-primary">Luis Gerardo Loera Pasillas</h1>
-      <p class="contact-icons">📍 Calvillo, Aguascalientes, México</p>
-      <p class="contact-icons">📧 loerapasillas12@gmail.com | 📱 449 124 3548</p>
-      <p class="contact-icons">💻 GitHub / LinkedIn (si tienes)</p>
-    </header>
 
-    <section data-aos="fade-up">
-      <h2 class="text-secondary">🎓 Formación Académica</h2>
-      <div>
-        <h5>Ingeniería en Desarrollo y Gestión de Software</h5>
-        <p>Universidad Tecnológica de Aguascalientes<br />Septiembre 2020 – Abril 2022<br />📄 Constancia de estudios</p>
-      </div>
-      <div>
-        <h5>TSU en Tecnologías de la Información</h5>
-        <p>Universidad Tecnológica de Aguascalientes<br />Septiembre 2018 – Agosto 2020<br />📄 Título y cédula profesional (13214678)</p>
-      </div>
-    </section>
+    <div id="cv">
+      <header data-aos="fade-down">
+        <h1 class="text-primary">Luis Gerardo Loera Pasillas</h1>
+        <h2 class="text-secondary">Ingeniería en Desarrollo y Gestión de Software</h2>
+        <p class="contact-icons">📍 Olivares Santana #548 A, La alberca, C.P. 20834, Ojocaliente, Calvillo, Ags.</p>
+        <p class="contact-icons">📧 <a href="mailto:loerapasillas12@gmail.com">loerapasillas12@gmail.com</a></p>
+        <p class="contact-icons">📱 <a href="tel:+524491243548">449 124 3548</a></p>
+        <p class="contact-icons">📄 CURP: LOPL980519HASRSS07</p>
+        <p class="contact-icons">📄 RFC: LOPL9805198T6</p>
+        <p class="contact-icons">📄 Cartilla militar: D-7050562 Liberada</p>
+        <p class="contact-icons">💻 <a href="https://github.com/luis9851" target="_blank">GitHub: luis9851</a></p>
+      </header>
 
-    <section data-aos="fade-up">
-      <h2 class="text-secondary">🧐 Cursos y Certificaciones</h2>
-      <h5>Programa Codellege – Desarrollo de Software</h5>
-      <p>Softtek | Abril 2019 – Abril 2020<br />📄 Constancia de finalización</p>
-    </section>
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">👤 Perfil Profesional</h2>
+        <p>Egresado de la carrera de Ingeniería en Desarrollo y Gestión de Software, con conocimientos en desarrollo web
+          y bases de datos. Me destaco por mi disposición al aprendizaje continuo, adaptabilidad y trabajo en equipo.
+          Busco iniciar mi desarrollo profesional en el área de tecnología, aportando entusiasmo, compromiso y ganas de
+          crecer junto a un equipo de trabajo.</p>
+      </section>
 
-    <section data-aos="fade-up">
-      <h2 class="text-secondary">💼 Experiencia Profesional</h2>
-      <div class="mb-3">
-        <h5>Grupo Farmacéutico QMC</h5>
-        <p><em>Encargado de Inventarios y Área de Informática (Abril 2025 – Actualidad)</em></p>
-        <ul>
-          <li>Mantenimiento de software y hardware en farmacias.</li>
-          <li>Control de inventarios: productos faltantes, duplicados y nuevos.</li>
-        </ul>
-      </div>
-      <div class="mb-3">
-        <h5>INEGI – Censo Económico</h5>
-        <p><em>Enlace de Vinculación Informática C (Febrero 2023 – Julio 2024)</em></p>
-        <ul>
-          <li>Diseño y actualización de cuestionarios del Censo Económico.</li>
-        </ul>
-      </div>
-      <div class="mb-3">
-        <h5>INEGI – Censo Agropecuario</h5>
-        <p><em>Sensor A (Septiembre 2022 – Octubre 2022)</em></p>
-        <ul>
-          <li>Recopilación de datos mediante software especializado.</li>
-          <li>Generación de reportes y avisos de visita.</li>
-        </ul>
-      </div>
-      <div class="mb-3">
-        <h5>Protexum</h5>
-        <p><em>Desarrollador de Software (Enero 2022 – Julio 2022)</em></p>
-        <ul>
-          <li>Desarrollo en Angular + MongoDB.</li>
-          <li>Sistema administrativo para gestión de personal y control de multas.</li>
-        </ul>
-      </div>
-      <div class="mb-3">
-        <h5>Museo Descubre</h5>
-        <p><em>Desarrollador Web (Mayo 2020 – Noviembre 2020)</em></p>
-        <ul>
-          <li>Aplicación de punto de venta con Angular + MongoDB.</li>
-        </ul>
-      </div>
-      <div class="mb-3">
-        <h5>Softtek (Codellege)</h5>
-        <p><em>Desarrollador Junior (Abril 2019 – Mayo 2020)</em></p>
-        <ul>
-          <li>Gestión de ventas y almacén en Angular + MongoDB.</li>
-          <li>Migración de base de datos SQL a MongoDB.</li>
-        </ul>
-      </div>
-    </section>
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">🎓 Formación Académica</h2>
+        <div>
+          <h5>Ingeniería en Desarrollo y Gestión de Software</h5>
+          <p>Universidad Tecnológica de Aguascalientes<br />Septiembre 2020 - Abril 2022<br />📄 Constancia de estudios
+          </p>
+        </div>
+        <div>
+          <h5>TSU en Tecnologías de la Información</h5>
+          <p>Universidad Tecnológica de Aguascalientes<br />Septiembre 2018 - Agosto 2020<br />📄 Título y cédula
+            profesional (13214678)</p>
+        </div>
+      </section>
 
-    <section data-aos="fade-up">
-      <h2 class="text-secondary">🛠️ Habilidades Técnicas</h2>
-      <ul>
-        <li>Lenguajes: JavaScript, TypeScript, HTML5, CSS3</li>
-        <li>Frameworks: Angular, Ionic framework</li>
-        <li>Bases de datos: MongoDB, SQL</li>
-        <li>Herramientas: Git, Visual Studio Code, Postman</li>
-        <li>Metodologías: SCRUM (si aplica)</li>
-        <li>Otros: Mantenimiento de hardware y software, trabajo en campo, recolección de datos</li>
-      </ul>
-    </section>
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">🧐 Cursos y Certificaciones</h2>
+        <h5>Programa Codellege - Desarrollo de Software</h5>
+        <p>Softtek | Abril 2019 - Abril 2020<br />📄 Constancia de finalización</p>
+        <img src="/codellege.png" class="img-responsive" alt="codellege.png" />
+      </section>
 
-    <section data-aos="fade-up">
-      <h2 class="text-secondary">🌐 Idiomas</h2>
-      <ul>
-        <li>Español: Nativo</li>
-        <li>Inglés: Básico</li>
-        <li>Curso Cambridge: En curso</li>
-      </ul>
-    </section>
+      <section class="no-break" data-aos="fade-up">
+        <h2 class="text-secondary">💼 Experiencia Laboral</h2>
+        <div class="mb-3">
+          <h5>Grupo Farmacéutico QMC</h5>
+          <p><em>Encargado de Inventarios e Informática | Abril 2025 - Actualidad</em></p>
+          <p>Mantenimiento de sistemas, soporte técnico y control de inventarios para sucursales farmacéuticas.</p>
+        </div>
+        <div class="mb-3">
+          <h5>INEGI - Censo Económico</h5>
+          <p><em>Enlace de Vinculación Informática C | Febrero 2023 - Julio 2024</em></p>
+          <p>Diseño, desarrollo y mantenimiento de cuestionarios para el Censo Económico. Soporte técnico continuo.
+          </p>
+        </div>
+        <div class="mb-3">
+          <h5>INEGI - Censo Agropecuario</h5>
+          <p><em>Sensor A | Septiembre 2022 - Octubre 2022</em></p>
+          <p>Recolección de datos con software especializado y generación de reportes.</p>
+        </div>
+        <div class="mb-3">
+          <h5>INEGI - Censo Agropecuario</h5>
+          <p><em>Aspirante a sensor A | Agosto 2022 - Septiembre 2022</em></p>
+          <p>Capacitación intensiva enfocada en conocimientos técnicos, evaluaciones prácticas y uso del software
+            oficial empleado en el Censo Agropecuario 2022.</p>
+        </div>
+        <div class="mb-3">
+          <h5>Protexum</h5>
+          <p><em>Desarrollador de Software | Enero 2022 - Julio 2022</em></p>
+          <p>Desarrollo de sistemas administrativos con Angular y MongoDB para gestión de personal y multas.</p>
+        </div>
+        <div class="mb-3">
+          <h5>Museo Descubre</h5>
+          <p><em>Desarrollador Web | Mayo 2020 - Noviembre 2020</em></p>
+          <p>Desarrollo de punto de venta y API con Angular y JavaScript.</p>
+        </div>
+        <div class="mb-3">
+          <h5>Softtek (Codellege)</h5>
+          <p><em>Desarrollador | Abril 2019 - Mayo 2020</em></p>
+          <p>Aplicaciones para gestión de ventas y almacén en Angular. Migración de SQL a MongoDB.</p>
+        </div>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">🎓 Conocimientos</h2>
+        <ul>
+          <li>Lenguajes: Java, JavaScript, TypeScript, HTML5, CSS3</li>
+          <li>Frameworks: Angular, Ionic</li>
+          <li>Bases de datos: MongoDB, SQL</li>
+          <li>Herramientas: Git, Visual Studio Code, Postman</li>
+          <li>Metodologías: SCRUM</li>
+          <li>Otros: Mantenimiento de hardware y software, trabajo en campo, recolección de datos</li>
+        </ul>
+      </section>
+      
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">🛠️ Habilidades</h2>
+        <ul>
+          <li>Trabajo en equipo</li>
+          <li>Responsabilidad</li>
+          <li>Adaptabilidad</li>
+          <li>Puntualidad</li>
+          <li>Tolerante</li>
+          <li>Resolución de problemas</li>
+        </ul>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2 class="text-secondary">🌐 Idiomas</h2>
+        <ul>
+          <li>Español: Nativo</li>
+          <li>Inglés: Básico</li>
+          <li>Curso Cambridge: En curso</li>
+        </ul>
+      </section>
+    </div>
+    <button id="download-btn" class="btn btn-outline-primary" onclick="downloadPDF()">📥 Descargar CV en PDF</button>
   </div>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init({ duration: 1000, once: true });
+
+    function downloadPDF() {
+      window.scrollTo(0, document.body.scrollHeight); // Fuerza scroll al fondo
+
+      setTimeout(() => {
+        const element = document.getElementById('cv');
+        const opt = {
+          margin: 0.5,
+          filename: 'CV_Luis_Gerardo_Loera.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+      }, 1000); // Espera un segundo a que AOS cargue todas las secciones
+    }
   </script>
 </body>
+
 </html>
